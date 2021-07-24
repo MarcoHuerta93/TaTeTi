@@ -50,8 +50,22 @@ namespace TaTeTi
                             Console.WriteLine("Felicitaciones. Ha ganado el jugador 2");
                         else
                             Console.WriteLine("Felicitaciones. Ha ganado el jugador 1");
+
+                        Console.WriteLine("Presione cualquier tecla para reiniciar el juego");
+                        Console.Read();
+                        ingreso = 0;
+                        Resetear();
                         break;
                     }
+                    else if(turnos == 10)
+                    {
+                        Console.WriteLine("\n¡Empate!");
+                        Console.WriteLine("Presione cualquier tecla para reiniciar el juego");
+                        Console.Read();
+                        Resetear();
+                        break;
+                    }
+
                 }
                 #endregion
 
@@ -144,6 +158,15 @@ namespace TaTeTi
             {'7','8','9' }
         };
 
+        //Array que contiene variables del juego inicial
+        static char[,] tableroJuegoInicial =
+        {
+            {'1','2','3' },
+            {'4','5','6' },
+            {'7','8','9' }
+        };
+
+        static int turnos = 0;
         //Método crea el tablero
         public static void CreaTablero()
         {
@@ -158,6 +181,16 @@ namespace TaTeTi
             Console.WriteLine("     |     |");
             Console.WriteLine(" {0}   |  {1}  |  {2}", tableroJuego[2, 0], tableroJuego[2, 1], tableroJuego[2, 2]);
             Console.WriteLine("_____|_____|_____");
+            turnos++;
+        }
+
+        //Método que reinicia todo el juego
+
+        public static void Resetear()
+        {
+            tableroJuego = tableroJuegoInicial;
+            CreaTablero();
+            turnos = 0;
         }
     }
 }
