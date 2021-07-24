@@ -31,13 +31,51 @@ namespace TaTeTi
 
                 CreaTablero();
 
-
+                //Código que verifica si el valor ingresado es válido
+                #region
                 do
                 {
                     Console.WriteLine("\nJugador {0}: Por favor elija un casillero...", jugador);
-                    ingreso = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        ingreso = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Por favor ingrese un número");
+                    }
+
+
+                    if ((ingreso == 1) && (tableroJuego[0, 0] == '1'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 2) && (tableroJuego[0, 1] == '2'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 3) && (tableroJuego[0, 2] == '3'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 4) && (tableroJuego[1, 0] == '4'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 5) && (tableroJuego[1, 1] == '5'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 6) && (tableroJuego[1, 2] == '6'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 7) && (tableroJuego[2, 0] == '7'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 8) && (tableroJuego[2, 1] == '8'))
+                        ingresoCorrecto = true;
+                    else if ((ingreso == 9) && (tableroJuego[2, 2] == '9'))
+                        ingresoCorrecto = true;
+                    else
+                    {
+                        Console.WriteLine("\nPor favor ingrese otro número");
+                        ingresoCorrecto = false;
+                    }
+
+
+
+
 
                 } while (!ingresoCorrecto);
+                #endregion
 
             } while (true);
 
