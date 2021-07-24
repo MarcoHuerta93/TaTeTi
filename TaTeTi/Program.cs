@@ -10,8 +10,8 @@ namespace TaTeTi
             int ingreso = 0;
             bool ingresoCorrecto = true;
 
-            CreaTablero();
-            Console.Read();
+            
+            
 
             do
             {
@@ -29,10 +29,19 @@ namespace TaTeTi
                     PonerXoO(jugador, ingreso);
                 }
 
+                CreaTablero();
 
 
+                do
+                {
+                    Console.WriteLine("\nJugador {0}: Por favor elija un casillero...", jugador);
+                    ingreso = Convert.ToInt32(Console.ReadLine());
+
+                } while (!ingresoCorrecto);
 
             } while (true);
+
+            
             
         }
 
@@ -78,6 +87,7 @@ namespace TaTeTi
         //Método crea el tablero
         public static void CreaTablero()
         {
+            Console.Clear();
             Console.WriteLine("_________________");
             Console.WriteLine("     |     |");
             Console.WriteLine(" {0}   |  {1}  |  {2}",  tableroJuego[0,0], tableroJuego[0,1], tableroJuego[0,2]);
