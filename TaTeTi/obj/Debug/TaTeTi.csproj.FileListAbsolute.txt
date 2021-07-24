@@ -1,0 +1,6 @@
+/Users/marcohuerta/Projects/TaTeTi/TaTeTi/bin/Debug/TaTeTi.exe
+/Users/marcohuerta/Projects/TaTeTi/TaTeTi/bin/Debug/TaTeTi.pdb
+/Users/marcohuerta/Projects/TaTeTi/TaTeTi/obj/Debug/TaTeTi.csproj.AssemblyReference.cache
+/Users/marcohuerta/Projects/TaTeTi/TaTeTi/obj/Debug/TaTeTi.csproj.CoreCompileInputs.cache
+/Users/marcohuerta/Projects/TaTeTi/TaTeTi/obj/Debug/TaTeTi.exe
+/Users/marcohuerta/Projects/TaTeTi/TaTeTi/obj/Debug/TaTeTi.pdb
