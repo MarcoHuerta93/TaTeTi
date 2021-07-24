@@ -31,6 +31,30 @@ namespace TaTeTi
 
                 CreaTablero();
 
+                //Código que verifica si hay un ganador
+                #region
+                char[] cadaSigno = { 'X', 'O' };
+                foreach (char signo in cadaSigno)
+                {
+                    if ((tableroJuego[0, 0] == signo) && (tableroJuego[0, 1] == signo) && (tableroJuego[0, 2] == signo)
+                        || (tableroJuego[1, 0] == signo) && (tableroJuego[1, 1] == signo) && (tableroJuego[1, 2] == signo)
+                        || (tableroJuego[2, 0] == signo) && (tableroJuego[2, 1] == signo) && (tableroJuego[2, 2] == signo)
+                        || (tableroJuego[0, 0] == signo) && (tableroJuego[1, 0] == signo) && (tableroJuego[2, 0] == signo)
+                        || (tableroJuego[0, 1] == signo) && (tableroJuego[1, 1] == signo) && (tableroJuego[2, 1] == signo)
+                        || (tableroJuego[0, 2] == signo) && (tableroJuego[1, 2] == signo) && (tableroJuego[2, 2] == signo)
+                        || (tableroJuego[0, 0] == signo) && (tableroJuego[1, 1] == signo) && (tableroJuego[2, 2] == signo)
+                        || (tableroJuego[0, 2] == signo) && (tableroJuego[1, 1] == signo) && (tableroJuego[2, 0] == signo))
+
+                    {
+                        if (signo == 'X')
+                            Console.WriteLine("Felicitaciones. Ha ganado el jugador 2");
+                        else
+                            Console.WriteLine("Felicitaciones. Ha ganado el jugador 1");
+                        break;
+                    }
+                }
+                #endregion
+
                 //Código que verifica si el valor ingresado es válido
                 #region
                 do
@@ -70,12 +94,10 @@ namespace TaTeTi
                         ingresoCorrecto = false;
                     }
 
-
-
-
-
                 } while (!ingresoCorrecto);
                 #endregion
+
+                
 
             } while (true);
 
@@ -106,7 +128,7 @@ namespace TaTeTi
                 case 6: tableroJuego[1, 2] = signo; break;
                 case 7: tableroJuego[2, 0] = signo; break;
                 case 8: tableroJuego[2, 1] = signo; break;
-                case 9: tableroJuego[2, 1] = signo; break;
+                case 9: tableroJuego[2, 2] = signo; break;
 
             }
             
