@@ -19,30 +19,16 @@ namespace TaTeTi
                 if (jugador == 2)
                 {
                     jugador = 1;
+
+                    //método
+                    PonerXoO(jugador, ingreso);
                 } else if (jugador == 1)
                 {
                     jugador = 2;
+                    //método
+                    PonerXoO(jugador, ingreso);
                 }
 
-                switch (jugador)
-                {
-                    case 1:
-                        switch (ingreso)
-                        {
-                            case 1: tableroJuego[0,0] = 'X'; break;
-                            case 2: tableroJuego[0,1] = 'X'; break;
-                            case 3: tableroJuego[0,2] = 'X'; break;
-                            case 4: tableroJuego[1,0] = 'X'; break;
-                            case 5: tableroJuego[1,1] = 'X'; break;
-                            case 6: tableroJuego[1,2] = 'X'; break;
-                            case 7: tableroJuego[2,0] = 'X'; break;
-                            case 8: tableroJuego[2,1] = 'X'; break;
-                            case 9: tableroJuego[2,1] = 'X'; break;
-
-                        }break;//fin switch ingreso
-
-
-                }
 
 
 
@@ -51,6 +37,34 @@ namespace TaTeTi
         }
 
         //Método para identificar Jugador
+        public static void PonerXoO(int jugador, int ingreso)
+        {
+            char signo = ' ';
+
+            if (jugador == 1)
+            {
+                signo = 'X';
+            }else if (jugador == 2)
+            {
+                signo = 'O';
+            }
+
+            switch (ingreso)
+            {
+                case 1: tableroJuego[0, 0] = signo; break;
+                case 2: tableroJuego[0, 1] = signo; break;
+                case 3: tableroJuego[0, 2] = signo; break;
+                case 4: tableroJuego[1, 0] = signo; break;
+                case 5: tableroJuego[1, 1] = signo; break;
+                case 6: tableroJuego[1, 2] = signo; break;
+                case 7: tableroJuego[2, 0] = signo; break;
+                case 8: tableroJuego[2, 1] = signo; break;
+                case 9: tableroJuego[2, 1] = signo; break;
+
+            }
+            
+
+        }//.fin método PonerXoO()
 
 
         //Array que contiene variables del juego
